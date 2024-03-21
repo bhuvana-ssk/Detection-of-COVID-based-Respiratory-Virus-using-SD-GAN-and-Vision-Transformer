@@ -5,7 +5,11 @@ from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
 import matplotlib.pyplot as plt
 
-model = tf.keras.models.load_model('TrainedModel.h5')
+current_dir = os.path.dirname(os.path.abspath(__file__))
+model_path = os.path.join(current_dir, 'TrainedModel.h5')
+model = tf.keras.models.load_model(model_path)
+
+#model = tf.keras.models.load_model('TrainedModel.h5')
 
 class_labels = ['COVID19', 'PNEUMONIA', 'NORMAL']
 
